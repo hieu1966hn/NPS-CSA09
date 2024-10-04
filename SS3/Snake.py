@@ -141,10 +141,26 @@ def main():
         ### Di chuyển rắn
         snake.move()
 
+        ### Kiểm tra xem rắn có ăn thức ăn hay không
+        if snake.body[0] == food.position:
+            score += 1
+            snake.grow()
+            food.spawn()
+
+        ### Kiểm tra xem rắn có va chạm không
+        if snake.check_collision():
+            pygame.quit()
+            sys.exit()
+
         ### Vẽ mọi thứ lên màn hình 
         screen.fill(black)
         snake.draw(screen)
         food.draw(screen)
+
+        ### Hiển thị điểm số
+        font = pygame.font.SysFont('times new roman', 20)
+        score_text = font.render("Score: " + str(score), True, white)
+        screen.blit(score_text, [0,0])
 
         ### Cập nhật màn hình
         pygame.display.update()
