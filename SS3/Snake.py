@@ -85,3 +85,56 @@ class Snake:
             return True
         
         return False
+    
+    ### Vẽ rắn lên màn hình 
+    def draw(self, screen):
+        for segment in self.body:
+            pygame.draw.rect(screen, green, pygame.Rect(segment[0], segment[1], self.size, self.size))
+    
+
+#### Hàm chính của trò chơi
+def main():
+    ## Khởi tạo đối tượng rắn con và thức ăn
+    snake = Snake()
+
+    ## Khởi tạo điểm số cho trò chơi
+    score = 0
+
+    ### chạy vòng lặp kiểm tra sự kiện bấm phím của người chơi
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            
+            ### kiểm tra phím di chuyển nào được bấm
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_UP:
+                    snake.change_to = "UP" ## Hướng thay đổi là lên
+                if event.key == pygame.K_DOWN:
+                    snake.change_to = "DOWN" ## Hướng thay đổi là xuống
+                if event.key == pygame.K_LEFT:
+                    snake.change_to = "LEFT" ## Hướng thay đổi là trái 
+                if event.key == pygame.K_RIGHT:
+                    snake.change_to = "RIGHT" ## Hướng thay đổi là phải
+
+        ### Cập nhật hướng đi của rắn
+        snake.change_direction(snake.change_to)
+
+        ### Di chuyển rắn
+        snake.move()
+
+        ### Vẽ mọi thứ lên màn hình 
+        screen.fill(black)
+        snake.draw(screen)
+
+        ### Cập nhật màn hình
+        pygame.display.update()
+
+        ### Điều chỉnh tốc độ khung hình
+        fps.tick(snake_speed)
+    
+### Chạy trò chơi
+if __name__ == "__main__":
+    main()
+
