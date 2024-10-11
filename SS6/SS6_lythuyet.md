@@ -58,3 +58,14 @@ LIMIT 3;
 2. Sử dụng WHERE để lọc danh sách học sinh có điểm Grade là "A".
 3. Sử dụng DISTINCT để liệt kê các giá trị khác nhau trong cột Grade.
 4. Sử dụng LIKE để tìm học sinh có tên chứa từ khóa "Lee".
+5. Sử dụng ORDER BY để sắp xếp danh sách học sinh theo tên.
+6. Sử dụng BETWEEN AND để tìm các học sinh có độ tuổi từ 14 - 16
+
+Bài nâng cao:
+Bài 1: Truy vấn nâng cao với WHERE, BETWEEN, LIKE và ORDER BY
+1. Lấy tên tất cả học sinh có tuổi từ 15 - 17 và sống ở thành phố "Chicago"
+2. Tìm kiếm học sinh có tên chứa chữ "a" (khong phân biệt hoa thường) và sắp xếp theo Grade giảm dần
+3. Liệt kê danh sách học sinh có điểm Grade là "B" hoặc "C", sắp xếp theo tuổi giảm dần.
+4. Sử dụng LIMIT đẻ chỉ hiển thị 2 học sinh có tuổi nhỏ nhất.
+
+Bài 2:  (về nhà làm)
