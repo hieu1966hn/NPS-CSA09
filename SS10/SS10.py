@@ -32,19 +32,19 @@ import pandas as pd
 
 
 ### Chữa bài luyện tập 2
-CSA09 = {
-    'Name': ['Khánh','Du','Phong', 'Vũ', 'Lâm'],
-    'Age': [15, 17, 17, 15, 16],
-    'Point': [8, 9, 10, 9.5, 8]
-}
+# CSA09 = {
+#     'Name': ['Khánh','Du','Phong', 'Vũ', 'Lâm'],
+#     'Age': [15, 17, 17, 15, 16],
+#     'Point': [8, 9, 10, 9.5, 8]
+# }
 
 ## Thêm một khóa Point2 vào dictionary
-CSA09['Point2'] = [1, 2, 3, 4, 5]
+# CSA09['Point2'] = [1, 2, 3, 4, 5]
 # print(CSA09)
 
 ## Tạo DF CSA09
-CSA09_DF = pd.DataFrame(CSA09)
-CSA09_DF['Average'] = (CSA09_DF['Point'] + CSA09_DF['Point2'])/2
+# CSA09_DF = pd.DataFrame(CSA09)
+# CSA09_DF['Average'] = (CSA09_DF['Point'] + CSA09_DF['Point2'])/2
 # print(CSA09_DF)
 
 ### Học sinh có điểm trung bình cao nhất
@@ -58,3 +58,27 @@ CSA09_DF['Average'] = (CSA09_DF['Point'] + CSA09_DF['Point2'])/2
     # if CSA09_DF[i] == highest_avg_student:  
     #     print(CSA09_DF[i])
 
+
+
+### Thực hành bài số 3:
+# Xuất dữ liệu ra file CSV
+# CSA09_DF.to_csv('./SS10/CSA09_Info.csv', index=False)
+
+### Đọc dữ liệu từ file CSV vừa xuất
+df_csa09 = pd.read_csv('./SS10/CSA09_Info.csv')
+
+## Viết hàm xử lý xếp loại học sinh
+def classify(avg):
+    if avg>8:
+        return 'Giỏi'
+    elif avg >= 6.5:
+        return 'Khá'
+    elif avg >= 5:
+        return 'Trung bình'
+    else:
+        return 'Yếu'
+
+df_csa09['Classification'] = df_csa09['Average'].apply(classify)
+print(df_csa09)
+
+df_csa09.to_csv('./SS10/classified_students.csv', index=False)

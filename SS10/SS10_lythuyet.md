@@ -46,6 +46,7 @@ df.to_csv('<ten_file_xuat>.csv', index=False)
 
 Đề bài số 3: Tính điểm TB của từng học sinh Dựa trên thang điểm
 - Xuất dữ liệu file CSV có chứa DS học sinh và điểm CP1, CP2
+- Đọc dữ liệu từ file CSV vừa xuất và xếp loại học sinh như điều kiện dưới đây:
 - Giỏi: ĐTB >= 8
 - Khá: 6.5 <= ĐTB < 8
 - Trung bình: 5 <= ĐTB < 6.5
