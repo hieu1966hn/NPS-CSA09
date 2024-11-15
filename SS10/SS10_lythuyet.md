@@ -37,3 +37,17 @@ df.to_csv('<ten_file_xuat>.csv', index=False)
 2. Đọc dữ liệu từ file CSV có sẵn (lát nữa làm)
 3. Thực hiện thao tác xem trước dữ liệu với head(), xem kiểu dữ liệu dtypes và kiểm tra thông tin chung với info()
 4. Xuất dữ liệu ra file CSV
+
+
+Đề bài thực hành 2: 
+1. Lấy dữ liệu từ bài 1, bổ sung thêm cột "Point2" CHỨA điểm CP2 của lớp
+2. Tính điểm trung bình của mỗi học sinh và thêm cột mới vào DF
+3. Hiển thị thông tin của học sinh có điểm trung bình cao nhất (nghiên cứu)
+
+Đề bài số 3: Tính điểm TB của từng học sinh Dựa trên thang điểm
+- Xuất dữ liệu file CSV có chứa DS học sinh và điểm CP1, CP2
+- Giỏi: ĐTB >= 8
+- Khá: 6.5 <= ĐTB < 8
+- Trung bình: 5 <= ĐTB < 6.5
+- Yếu: ĐTB < 5
+- Xuất dữ liệu ra file CSV với cột xếp loại mới.
