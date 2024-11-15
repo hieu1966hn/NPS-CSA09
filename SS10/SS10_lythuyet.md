@@ -52,3 +52,10 @@ df.to_csv('<ten_file_xuat>.csv', index=False)
 - Trung bình: 5 <= ĐTB < 6.5
 - Yếu: ĐTB < 5
 - Xuất dữ liệu ra file CSV với cột xếp loại mới.
+
+Đề bài số 4: Đọc dữ liệu từ 1 file CSV chứa thông tin bán hàng bao gồm các cột: Tên sản phẩm,
+Số lượng bán, Đơn giá
+- Loại bỏ các dòng dữ liệu có giá trị null (thiếu thông tin)
+- Thêm một cột mới tên là "Tổng tiền" với công thưc:
+Tổng tiền = Số lượng bán * Đơn giá.
+- Xuất DF mới ra file CSV sau khi làm sạch
